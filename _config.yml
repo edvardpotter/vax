@@ -3,3 +3,4 @@ description: Web-based Visual Absctract Scripting Editor
 github_url: https://github.com/aveic/vax
 markdown: kramdown
 highlighter: rouge
+theme: jekyll-theme-cayman
