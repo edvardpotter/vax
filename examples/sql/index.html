@@ -1,0 +1,19 @@
+---
+layout: default
+example: sql
+---
+<script type="text/javascript">
+    $(function()
+    {
+        $('<div id="vax-sql" style="position: absolute; top: 100px; left: 10px;"></div>').appendTo($('body'));
+
+        var screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+        var screenWidth  = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+        $('#vax-sql').css({width: screenWidth - 30, height: screenHeight - 130});
+
+        window.myVAX = new VAX('vax-sql', {schema: exampleSchema});
+
+        myVAX.loadGraph({"nodes":[{"id":2,"c":"Select","x":1345,"y":239,"a":{"Alias":"","LIMIT":"","OFFSET":""}},{"id":14,"c":"Tbl_public__tbl_order","x":308,"y":101,"a":{"Alias":"o"}},{"id":17,"c":"Aggregate","x":724,"y":17,"a":{"Type":"COUNT","Alias":"cnt"}},{"id":23,"c":"Col_public__tbl_order__id","x":539,"y":21,"a":{"Alias":"id"}},{"id":27,"c":"Col_public__tbl_order__created_at","x":358,"y":299,"a":{"Alias":"created_at"}},{"id":31,"c":"Gather3Columns","x":1087,"y":177},{"id":36,"c":"OrderBy","x":902,"y":578,"a":{"D":"ASC"}},{"id":41,"c":"CastToDate","x":556,"y":337},{"id":44,"c":"AliasExpr","x":759,"y":273,"t":{"T":"DateExpr"},"a":{"Alias":"Дата"}},{"id":48,"c":"Between","x":657,"y":507},{"id":53,"c":"CurrentDate","x":404,"y":647},{"id":55,"c":"DateLiteral","x":403,"y":501,"a":{"Year":2017,"Month":1,"Day":1}},{"id":60,"c":"BinOp_Gt","x":1047,"y":18},{"id":64,"c":"NumericLiteral","x":967,"y":91,"a":{"V":"100"}}],"wires":[[14,"O",2,"FROM"],[14,"O",23,"T"],[23,"O",17,"Expr"],[14,"O",27,"T"],[17,"O",31,"C1"],[31,"O",2,"Cols"],[36,"O",2,"ORDER"],[27,"O",41,"E"],[41,"O",36,"E"],[41,"O",2,"GROUP"],[41,"O",44,"E"],[44,"O",31,"C2"],[27,"O",48,"E"],[48,"O",2,"WHERE"],[53,"O",48,"R"],[55,"O",48,"L"],[17,"O",60,"A"],[60,"O",2,"HAVING"],[64,"O",60,"B"]],"comments":[{"t":"Период","x":388,"y":456,"w":142,"h":271}]});
+    });
+</script>

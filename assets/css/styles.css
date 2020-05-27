@@ -1,0 +1,12 @@
+h1 {
+  font-variant: small-caps;
+}
+
+figure.highlight, figure.highlight code, figure.highlight pre {
+  background: #444;
+  color: #fafafa;
+}
+
+figure.highlight pre {
+  border: none;
+}
